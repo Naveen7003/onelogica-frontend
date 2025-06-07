@@ -15,7 +15,7 @@ const AssignTask = () => {
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const [limit] = useState(10); // Items per page
+  const [limit] = useState(10);
 
   const fetchTask = async () => {
     try {
@@ -88,14 +88,14 @@ const AssignTask = () => {
   const handleNextPage = () => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
-      setSelectedTaskIds([]); // Clear selection when changing pages
+      setSelectedTaskIds([]);
     }
   };
 
   const handlePrevPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
-      setSelectedTaskIds([]); // Clear selection when changing pages
+      setSelectedTaskIds([]);
     }
   };
 
@@ -120,7 +120,6 @@ const AssignTask = () => {
           </button>
         </div>
 
-        {/* Tasks Table */}
         <div className="overflow-x-auto bg-white border rounded shadow-sm">
           <table className="min-w-full text-left">
             <thead className="bg-gray-200">
@@ -170,7 +169,6 @@ const AssignTask = () => {
           </table>
         </div>
 
-        {/* Pagination Controls */}
         <div className="flex justify-between items-center mt-4">
           <button
             onClick={handlePrevPage}
@@ -200,7 +198,6 @@ const AssignTask = () => {
         </div>
       </div>
 
-      {/* Assign Dialog */}
       {showDialog && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"

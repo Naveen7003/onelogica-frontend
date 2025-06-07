@@ -45,7 +45,6 @@ const Signup = () => {
         <h1 className="text-3xl font-bold text-center mb-4">Signup</h1>
 
         <form onSubmit={SubmitHandler}>
-          {/* Username */}
           <div className="mb-3">
             <label className="block text-gray-700 font-semibold mb-1">
               Username

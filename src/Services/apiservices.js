@@ -36,7 +36,6 @@ export const loggedInUsers = async () => {
     return error.response;
   }
 };
-// POST  /user/signout   (needs auth token in axios defaults/interceptor)
 export const employeSignout = async () => {
   try {
     const res = await axios.post("/user/signout");
@@ -46,9 +45,6 @@ export const employeSignout = async () => {
   }
 };
 
-/* ────────────────  TASK ROUTES  ──────────────── */
-
-// POST  /task          → create new task
 export const createTask = async (payload) => {
   try {
     const res = await axios.post("/task/task", payload);
@@ -58,7 +54,6 @@ export const createTask = async (payload) => {
   }
 };
 
-// GET   /tasks         → fetch all tasks
 export const getAllTasks = async (page = 1, limit = 10) => {
   try {
     const res = await axios.get(`/task/tasks?page=${page}&limit=${limit}`);
@@ -68,7 +63,6 @@ export const getAllTasks = async (page = 1, limit = 10) => {
   }
 };
 
-// GET   /task/:id      → fetch one task
 export const getTaskById = async (taskId) => {
   try {
     const res = await axios.get(`/task/task/${taskId}`);
@@ -78,7 +72,6 @@ export const getTaskById = async (taskId) => {
   }
 };
 
-// PUT   /task/:id      → update entire task / partial patch
 export const updateTask = async (taskId, updates) => {
   try {
     const res = await axios.put(`/task/task/${taskId}`, updates);
@@ -88,7 +81,6 @@ export const updateTask = async (taskId, updates) => {
   }
 };
 
-// Assign task
 export const assignTasksToUser = async (taskIds, userId) => {
   try {
     const response = await axios.post("/task/assign-task", { taskIds, userId });
@@ -98,7 +90,6 @@ export const assignTasksToUser = async (taskIds, userId) => {
   }
 };
 
-// DELETE /task/:id     → remove task
 export const deleteTask = async (taskId) => {
   try {
     const res = await axios.delete(`/task/task/${taskId}`);

@@ -18,7 +18,7 @@ const LoggedInDashboard = () => {
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const [limit] = useState(10); // Items per page
+  const [limit] = useState(10);
 
   const fetchTask = async () => {
     try {
@@ -291,7 +291,6 @@ const LoggedInDashboard = () => {
           </table>
         </div>
 
-        {/* Pagination Controls */}
         <div className="flex justify-between items-center mt-4">
           <button
             onClick={handlePrevPage}
@@ -321,7 +320,6 @@ const LoggedInDashboard = () => {
         </div>
       </div>
 
-      {/* Add Task Dialog - Only for admin */}
       {showAddDialog && loggedInUser?.role === "admin" && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
@@ -343,7 +341,6 @@ const LoggedInDashboard = () => {
         </div>
       )}
 
-      {/* Update Task Dialog */}
       {showUpdateDialog && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
@@ -374,7 +371,6 @@ const LoggedInDashboard = () => {
   );
 };
 
-// Reusable form fields with disabled option
 const renderForm = (formData, onChange, isDisabled = false) => (
   <>
     <div>
@@ -451,7 +447,6 @@ const renderForm = (formData, onChange, isDisabled = false) => (
   </>
 );
 
-// Reusable Dialog Footer
 const DialogActions = ({ onCancel, isSubmitting = false }) => (
   <div className="flex justify-end space-x-4 pt-4">
     <button

@@ -32,10 +32,8 @@ const Navbar = () => {
   }, []);
   return (
     <div className="min-h-fit flex flex-col ">
-      {/* Navbar */}
       <nav className="bg-gray-800 p-4 shadow-lg text-white">
         <div className="container mx-auto flex justify-between items-center">
-          {/* <h1 className="text-2xl font-bold">Employee Portal</h1> */}
           <ul className="flex space-x-32">
             <li>
               <Link to="/dashboard" className="hover:text-gray-300">

@@ -25,7 +25,6 @@ const Dashboard = () => {
             Signup
           </button>
 
-          {/* Line for navigating to login page */}
           <p className="mt-6 text-gray-600">
             Already signed up?{" "}
             <button
